@@ -19,6 +19,7 @@ export class AuthService {
       const success = found.password === accountInfo.password;
       if (success) {
         localStorage.setItem('accountDetails', JSON.stringify(found));
+        localStorage.setItem('isLoggin', 'true');
         this.router.navigate(['./account-details']);
         return true;
       }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
+import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { AccountDetailsComponent } from './views/account-details/account-details.component';
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
@@ -13,7 +14,7 @@ import { TransferMoneyComponent } from './views/transfer-money/transfer-money.co
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -47,6 +48,8 @@ export const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
+    canActivate: [AuthGuardGuard],
+    canActivateChild: [AuthGuardGuard],
     data: {
       title: 'Home',
     },
