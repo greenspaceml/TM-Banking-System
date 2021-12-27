@@ -1,0 +1,55 @@
+<div class="animated fadeIn">
+  <div class="row justify-content-md-center">
+    <!--/.col-->
+    <div class="col-sm-6">
+      <form [formGroup]="formGroup">
+        <div class="card">
+          <div class="card-header">
+            <strong>Transfer money</strong>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="receiverAccountEmail">Receiver Email</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="receiverAccountEmail"
+                id="receiverAccountEmail"
+                placeholder="Enter the receiver email account"
+              />
+            </div>
+            <div class="form-group">
+              <label for="withdrawals">Amount</label>
+              <input
+                type="number"
+                class="form-control"
+                id="receiverAccountEmail"
+                formControlName="withdrawals"
+                placeholder="Enter the amount of money you want to send"
+              />
+            </div>
+            <div class="form-group">
+              <label for="description">Message as transfer description</label>
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                formControlName="description"
+              />
+            </div>
+            <!--/.row-->
+            <button
+              type="button"
+              (click)="onSubmit()"
+              class="btn btn-block btn-primary"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--/.col-->
+  </div>
+  <!--/.row-->
+</div>
